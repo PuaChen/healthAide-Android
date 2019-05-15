@@ -16,7 +16,7 @@ import okhttp3.Response;
 
 public interface HttpCallBack {
 
-    void success(JSONObject json, Response response);
+    void success(String json, Response response);
 
     default void error(String error, Response response, IOException e) {
         L.e(error);

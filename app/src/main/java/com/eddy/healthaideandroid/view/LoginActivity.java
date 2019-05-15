@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.fastjson.JSONObject;
-import com.eddy.healthaideandroid.MainActivity;
 import com.eddy.healthaideandroid.R;
 import com.eddy.healthaideandroid.config.HttpCallBack;
 import com.eddy.healthaideandroid.constant.Constant;
@@ -51,13 +50,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         HttpUtil.doPostForm("/main/login", CustomMap.create("phone", phone)
                 .put("password", password), new HttpCallBack() {
             @Override
-            public void success(JSONObject json, Response response) {
+            public void success(String json, Response response) {
                 {
-                    String token = json.getString("token");
+                    String token = JSONObject.parseObject(json).getString("token");
                     DataUtil.saveDataByString(LoginActivity.this, Constant.TOKEN_DIR, Constant.TOKEN_DIR, token);
                     //登录成功
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
+                    overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
                 }
             }
 

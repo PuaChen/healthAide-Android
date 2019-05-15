@@ -11,5 +11,5 @@ public interface Constant {
     String TOKEN_KEY = "Authorization";
     String TOKEN_DIR = "tokenDir";
 
-    String PREFIX_URL = "http://192.168.0.117:8111/api";
+    String PREFIX_URL = "http://192.168.1.119:8111/api";
 }

@@ -1,6 +1,9 @@
 package com.eddy.healthaideandroid.util;
 
 
+import android.os.Handler;
+import android.os.Looper;
+
 import com.alibaba.fastjson.JSONObject;
 import com.eddy.healthaideandroid.config.HttpCallBack;
 import com.eddy.healthaideandroid.config.MyApplication;
@@ -18,6 +21,7 @@ import okhttp3.FormBody;
 import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -48,6 +52,8 @@ public class HttpUtil {
                         .build();
     }
 
+    public static final Handler HANDLER = new Handler(Looper.getMainLooper());
+
     public static final OkHttpClient getInstance() {
         return Get.OK_HTTP_CLIENT;
     }
@@ -76,6 +82,18 @@ public class HttpUtil {
             builder.add(entry.getKey(), String.valueOf(entry.getValue()));
         }
         doPost(url, builder.build()).enqueue(new MyCall(callBack));
+    }
+
+    /**
+     * Post请求 body格式
+     *
+     * @param url
+     * @param params
+     * @param callBack
+     */
+    public static void doPostForBody(String url, Map<String, Object> params, final HttpCallBack callBack) {
+        RequestBody body = RequestBody.create(MediaType.parse("application/json"), JSONObject.toJSONString(params));
+        doPost(url, body).enqueue(new MyCall(callBack));
     }
 
 
@@ -109,7 +127,8 @@ public class HttpUtil {
 
         @Override
         public void onFailure(Call call, IOException e) {
-            callBack.error(e.getMessage(), null, e);
+            HANDLER.post(() -> callBack.error(e.getMessage(), null, e));
+
         }
 
         @Override
@@ -119,12 +138,12 @@ public class HttpUtil {
                 JSONObject jsonObject = JSONObject.parseObject(string);
                 L.HLog(jsonObject);
                 if (jsonObject.getString("errorCode").equals("0")) {
-                    callBack.success(jsonObject.getJSONObject("result"), response);
+                    HANDLER.post(() -> callBack.success(JSONObject.toJSONString(jsonObject.get("result")), response));
                 } else {
-                    callBack.error(jsonObject.getString("errorMessage"), response, null);
+                    HANDLER.post(() -> callBack.error(jsonObject.getString("errorMessage"), response, null));
                 }
             } else {
-                callBack.error("请求失败", response, null);
+                HANDLER.post(() -> callBack.error("请求失败", response, null));
             }
             response.close();
         }

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.eddy.healthaideandroid.view.CreateActivity">
+
+    <include layout="@layout/common_head" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="20dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="体温: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_animalHeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入体温"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血氧: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_blood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入血氧"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血糖: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_glucose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入血糖"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="胆固醇: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_cholesterol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入胆固醇"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血压·高压: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/create_pressureH"
+                    android:padding="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入血压 高压"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血压·低压: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_pressureL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入血压 低压"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="血尿酸: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_uric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入血尿酸"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="甘油三酯: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_triglyceride"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入甘油三酯"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <!--End-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="尿液酸碱度: "
+                    android:textColor="#606266"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:padding="3dp"
+                    android:id="@+id/create_urinePh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="center"
+                    android:hint="请输入尿液酸碱度"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCDFE6" />
+
+
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:id="@+id/create_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="10dp"
+                android:text="提交"
+                app:qmui_isRadiusAdjustBounds="true" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
